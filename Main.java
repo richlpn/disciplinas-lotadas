@@ -1,7 +1,11 @@
 class Main {
-  public static void main(String[] args) {
-    Aluno a1 = new Aluno("Richard", "000.000.000");
-    System.out.println("Rodou");
-    
-  }
+    public static void main(String[] args) {
+        Sistema sistema = new Sistema();
+
+        sistema.lerDadosAlunos("./Exemplos/aluno.txt");
+        sistema.lerDadosProfessores("./Exemplos/professor.txt");
+        sistema.lerDadosTurma("./Exemplos/turma.txt");
+        sistema.exibirNotas();
+
+    }
 }

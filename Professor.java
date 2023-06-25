@@ -1,6 +1,17 @@
 public class Professor extends Pessoa implements Comparable<Professor>{
-    @Override 
+
+
+    public Professor(String nome, String cpf) {
+        super(nome, cpf);
+    }
+
+    @Override
     public int compareTo(Professor p1){
-        return this.nome.compareTo(p1.nome);
+        return this.getNome().compareTo(p1.getNome());
+    }
+
+    @Override
+    public String print() {
+        return nome + " ";
     }
 }

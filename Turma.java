@@ -15,27 +15,6 @@ public class Turma implements Comparable<Turma> {
         this.profResp = profResp;
         this.alunosNotas = new ArrayList<>();
     }
-
-    public String getNomeDisciplina() {
-        return nomeDisciplina;
-    }
-
-    public int getAno() {
-        return ano;
-    }
-
-    public int getSemestre() {
-        return semestre;
-    }
-
-    public Professor getProfessor() {
-        return profResp;
-    }
-
-    public List<AlunoNota> getAlunosNotas() {
-        return alunosNotas;
-    }
-
     public void adicionarAlunoNota(AlunoNota alunoNota) {
         alunosNotas.add(alunoNota);
     }
@@ -52,5 +31,14 @@ public class Turma implements Comparable<Turma> {
 
         // Comparação com base no professor responsável
         return this.profResp.compareTo(outraTurma.profResp);
+    }
+
+    @Override
+    public String toString() {
+        String saida = nomeDisciplina + " (" + ano +"/"+ semestre +") " + profResp.print();
+        for(AlunoNota alunoNota : alunosNotas){
+            saida += "\n"+alunoNota;
+        }
+        return saida;
     }
 }
